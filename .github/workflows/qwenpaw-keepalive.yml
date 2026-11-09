@@ -1,7 +1,7 @@
 name: qwenpaw-keepalive
 on:
   schedule:
-    - cron: "21 23 * * *"     # 每天 7:21
+    - cron: "21 */6 * * *"     # 每天 7:21
   workflow_dispatch: {}         # 支持手动触发
 permissions:                    # 授予内置 token 提交权限（自动防停用必需）
   contents: write
