@@ -40,8 +40,8 @@ def keepalive(account, password):
         c, _ = req(f"{PLATFORM}/api/v1/app/heartbeat", "POST",
                    headers=auth, data={"appId": sid})
         print(f"  {sid[:13]}… heartbeat: HTTP {c}")
-        if c == 200:
-            continue
+        # if c == 200:
+        #     continue
         ok = False
         c2, b2 = req(f"{PLATFORM}/api/v1/qwenpaw/{sid}", "GET", headers=auth)
         ct = json.loads(b2).get("data", {}).get("console_token")
